@@ -8,10 +8,45 @@ require_once("libraries/cloudflare_db.php");
 
 function cloudflare_config()
 {
-    // Configuration is stored in package.json file in this directory
-    $config = json_decode(file_get_contents(dirname(__FILE__) . '/package.json'), true);
-
-    return $config;
+    return [
+        'name' => 'CloudFlare',
+        'description' => 'Extend your network globally by caching and securing your customers\'s websites at 32 points of presence around the world. Benefit from safer and happier customers, reduced bandwidth costs - all starting at FREE.Not yet a partner? Sign up here.',
+        'version' => '1.3.7',
+        'author' => 'kel',
+        'fields' => [
+            'hostkey' => [
+                  'FriendlyName' => 'Host API Key',
+                  'Type' => 'text',
+                  'Size' => '50',
+                  'Description' => 'Required for the addon to perform any action. Not yet a partner? Sign up here',
+                  'Default' => '',
+            ],
+            'showclientlogs' => [
+                'FriendlyName' => 'Show Client Logs',
+                'Type' => 'yesno',
+                'Description' => 'Control whether your clients can see the logs for actions they perform in the module. Full logs always available from the admin view.',
+                'Default' => 'yes',
+            ],
+            'adminid' => [
+                'FriendlyName' => 'Admin ID',
+                'Type' => 'text',
+                'Description' => 'Admin user for internal calls. New user can be easily provisioned through the Add-On -> CloudFlare interface.',
+                'Default' => '1',
+            ],
+            'displayfrontendlink' => [
+                'FriendlyName' => 'Display Frontend Link',
+                'Type' => 'yesno',
+                'Description' => 'Additional information available here. Controls whether blue \'Setup CloudFlare\' link is added to client side pages.',
+                'Default' => 'yes',
+            ],
+            'displayorderconfirmpage' => [
+                'FriendlyName' => 'Display Instructions on Order Confirmation Page',
+                'Type' => 'yesno',
+                'Description' => 'CloudFlare by default makes the setup instructions available on the order confirmation page. Disable this to limit that information to the \'Setup CloudFlare\' page',
+                'Default' => 'yes',
+            ],
+        ],
+    ]
 }
 
 function cloudflare_activate()

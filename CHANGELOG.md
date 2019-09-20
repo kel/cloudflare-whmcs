@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.3.7](#1.3.7) - 2019-09-20
+### Cleaned Up
+- Cleaned up folder structure to look like WHMCS reccomendations
+- Returned configs back into the PHP code and removed the package.json file
+
 ## [1.3.6](#1.3.6) - 2019-09-20
 ### Fixed
 - Fixed arguments being passed to arrays for WHMCS hooks to make it compatible with WHMCS v7.8 and PHP v7.3
