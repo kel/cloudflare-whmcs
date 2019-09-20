@@ -1,7 +1,7 @@
 <?php
 
-require_once("libraries/cloudflare_helper.php");
-require_once("libraries/cloudflare_host_api.php");
+require_once('libraries/cloudflare_helper.php');
+require_once('libraries/cloudflare_host_api.php');
 
 function hook_cloudflare_create($vars)
 {
@@ -9,7 +9,6 @@ function hook_cloudflare_create($vars)
     $service_id = $vars["serviceid"];
 
     cloudflare_provision($vars["userid"],$service_id,$addon_id);
-
 }
 
 add_hook('AddonActivation', 1, 'hook_cloudflare_create');
@@ -22,6 +21,7 @@ function hook_cloudflare_provision_after_cpanel_account_creation($vars)
 
     if ($module_id == "cpanel") {
         $cloudFlareAddonToProvision = cloudflare_getUnprovisionedAddon($service_id);
+        
         if (isset($cloudFlareAddonToProvision['id'])) {
             cloudflare_provision($vars['params']['userid'],$service_id,$cloudFlareAddonToProvision["addonid"]);
         }
@@ -46,8 +46,6 @@ function hook_cloudflare_delete($vars)
     }
 }
 
-
-
 add_hook('AddonTerminated', 1, 'hook_cloudflare_delete');
 add_hook('AddonCancelled', 1, 'hook_cloudflare_delete');
 add_hook('AddonFraud', 1, 'hook_cloudflare_delete');
@@ -60,6 +58,7 @@ function hook_cloudflare_suspend($vars) {
      * If its a paid plan downgrade to free, if its free do nothing.
      */
     if($zone = cloudflare_getDomainByServiceID($service_id)) {
+
         if($cf_zone = cloudflare_getCloudFlareZone($user_id, $zone["domain"])) {
             cloudflare_cancelResellerSubscriptionByCFZone($cf_zone);
         }
@@ -70,7 +69,6 @@ add_hook('AddonSuspended', 1, 'hook_cloudflare_suspend');
 
 function hook_cloudflare_client_head($vars)
 {
-
     $inject = "";
 
     if ($vars["loggedin"]) {
@@ -98,12 +96,12 @@ add_hook('ClientAreaHeadOutput', 1, 'hook_cloudflare_client_head');
 
 function hook_cloudflare_client_foot($vars)
 {
-
     $userid = $vars["clientsdetails"]["userid"];
 
     $inject = "";
 
     if ($vars["loggedin"] && cloudflare_userIsUsingCloudFlare($userid)) {
+
         if (cloudflare_getSettingValue("displayfrontendlink", "on") === "on") {
             $inject .= cloudflare_getConfigButtonHTML();
         }
@@ -151,7 +149,7 @@ function hook_cloudflare_after_domain_registration($vars)
 add_hook('AfterRegistrarRegistration', 1, 'hook_cloudflare_after_domain_registration');
 
 // hook for enabling and saving default on for any addon
-function hook_cloudflare_addon_config($addonid)
+function hook_cloudflare_addon_config($vars)
 {
     $fields = array();
 
@@ -159,7 +157,7 @@ function hook_cloudflare_addon_config($addonid)
     $data = Cloudflare_Helper::getInstalledAddons();
 
     foreach ($data as $addon) {
-        if ($addon['addonid'] == $addonid['id']) {
+        if ($addon['addonid'] == $vars['id']) {
             $fields['Enabled by Default'] = '<input type="checkbox" name="cf_defaulton" id="cf_defaulton" ' . ($addon["defaulton"] == 1 ? 'checked="checked" ' : '') . ' /> <label for="cf_defaulton">Enabling this will force this addon to be checked by default on the client side of WHMCS when a customer selects addons (if the addon is visible).</label>';
             return $fields;
         }
@@ -168,18 +166,17 @@ function hook_cloudflare_addon_config($addonid)
 
 add_hook('AddonConfig', 1, 'hook_cloudflare_addon_config');
 
-function hook_cloudflare_addon_config_save($addonid)
+function hook_cloudflare_addon_config_save($vars)
 {
-    Cloudflare_Helper::setDefaultOn($addonid['id'], $_REQUEST['cf_defaulton']);
+    Cloudflare_Helper::setDefaultOn($vars['id'], $_REQUEST['cf_defaulton']);
 }
 
 add_hook('AddonConfigSave', 1, 'hook_cloudflare_addon_config_save');
 
-// only $orderid is actually used
-function hook_cloudflare_cart_checkout_complete($orderid, $ordernumber, $invoiceid, $idpaid, $amount, $paymentmethod, $clientdetails)
+function hook_cloudflare_cart_checkout_complete($vars)
 {
-    $order = $orderid['orderid'];
-    $user_id = $orderid['clientdetails']['userid'];
+    $order = $vars['orderid'];
+    $user_id = $vars['clientdetails']['userid'];
 
     $display_cloudflare = cloudflare_getSettingValue("displayorderconfirmpage", "on");
 
