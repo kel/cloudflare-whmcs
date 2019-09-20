@@ -12,7 +12,7 @@ function cloudflare_config()
         'name' => 'CloudFlare',
         'description' => 'Extend your network globally by caching and securing your customers\'s websites at 32 points of presence around the world. Benefit from safer and happier customers, reduced bandwidth costs - all starting at FREE.Not yet a partner? Sign up here.',
         'version' => '1.3.7',
-        'author' => 'CloudFlare',
+        'author' => 'kel',
         'fields' => [
             'hostkey' => [
                   'FriendlyName' => 'Host API Key',
