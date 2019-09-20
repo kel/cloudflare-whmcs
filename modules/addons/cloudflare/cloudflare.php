@@ -46,7 +46,7 @@ function cloudflare_config()
                 'Default' => 'yes',
             ],
         ],
-    ]
+    ];
 }
 
 function cloudflare_activate()
