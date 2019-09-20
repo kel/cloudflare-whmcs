@@ -1,0 +1,39 @@
+{
+  "name": "CloudFlare",
+  "description": "Extend your network globally by caching and securing your customers's websites at 32 points of presence around the world. Benefit from safer and happier customers, reduced bandwidth costs - all starting at FREE.<br><br><em>Not yet a partner? Sign up <a href=\"http://www.cloudflare.com/partners\" target=\"_blank\">here</a></em>.",
+  "version": "1.3.5",
+  "author": "CloudFlare",
+  "fields": {
+    "hostkey": {
+      "FriendlyName": "Host API Key",
+      "Type": "text",
+      "Size": "50",
+      "Description": "Required for the addon to perform any action. <em>Not yet a partner? Sign up <a href=\"http://www.cloudflare.com/partners\" target=\"_blank\">here</a></em>",
+      "Default": ""
+    },
+    "showclientlogs": {
+      "FriendlyName": "Show Client Logs",
+      "Type": "yesno",
+      "Description": "Control whether your clients can see the logs for actions they perform in the module. Full logs always available from the admin view.",
+      "Default": "yes"
+    },
+    "adminid": {
+      "FriendlyName": "Admin ID",
+      "Type": "text",
+      "Description": "Admin user for internal calls. New user can be easily provisioned through the Add-On -> CloudFlare interface.",
+      "Default": "1"
+    },
+    "displayfrontendlink": {
+      "FriendlyName": "Display Frontend Link",
+      "Type": "yesno",
+      "Description": "Additional information <a href=\"https://support.cloudflare.com/hc/en-us/articles/204277308\" target=\"_blank\">available here</a>. Controls whether blue 'Setup CloudFlare' link is added to client side pages.",
+      "Default": "yes"
+    },
+    "displayorderconfirmpage": {
+      "FriendlyName": "Display Instructions on Order Confirmation Page",
+      "Type": "yesno",
+      "Description": "CloudFlare by default makes the setup instructions available on the order confirmation page. Disable this to limit that information to the 'Setup CloudFlare' page",
+      "Default": "yes"
+    }
+  }
+}

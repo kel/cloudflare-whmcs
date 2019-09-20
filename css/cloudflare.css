@@ -1,0 +1,303 @@
+@import url("//fonts.googleapis.com/css?family=Open+Sans:300,400,600");
+@import url("//fonts.googleapis.com/css?family=Droid+Sans+Mono");
+
+#cfslideout {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+    top: 25%;
+    width: 180px;
+    height: 30px;
+    right: -75px;
+    background: #2f7bbf;
+    float: right;
+    position: fixed;
+    text-align: center;
+    color: white;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+
+    -webkit-transition: background 0.3s ease-in;
+    -moz-transition: background 0.3s ease-in;
+    -o-transition: background 0.3s ease-in;
+    transition: background 0.3s ease-in;
+}
+
+#cfslideout:hover {
+    background: #62a0d6;
+}
+
+#cflogs {
+    font-family: "Droid Sans Mono", monospace;
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.cfcontainer {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    width: 100%;
+}
+
+.cfcontainer h1 {
+    font-family: inherit;
+    letter-spacing: 0;
+    text-shadow: 0 0;
+    font-weight: 300;
+}
+
+.cfcontainer code {
+    font-family: "Droid Sans Mono", monospace;
+    color: black;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    padding: 2px 4px;
+}
+
+.cfcontainer form {
+    display: inherit;
+}
+
+.cfcontainer button {
+    border-style: none;
+    padding: 0 0 0 0;
+    border: 0;
+    background-color: transparent;
+    box-sizing: border-box;
+    display: inherit;
+}
+
+.cfcontainer strong {
+    font-weight: 600;
+    color: #2f7bbf;
+}
+
+.cflogscontainer {
+    max-height: 200px;
+    overflow: scroll;
+}
+
+.cfinfobox {
+    font-family: inherit;
+    height: 100px;
+    max-height: 100px;
+    width: 130px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+    margin: 5px 10px 10px 0;
+    display: inline-block;
+}
+
+.cfinfobox img {
+    height: 30px;
+    width: auto;
+    top: 4px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+#cfapisuccess {
+    background: #9bca3e;
+}
+
+#cfapifail {
+    background: #bd2527;
+}
+
+#cfpartnerportal {
+    background: #f68b20;
+
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+#cfpartnerportal:hover {
+    background: #f8b168;
+}
+
+#cfresellerimport {
+    background: #2f7bbf;
+
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+#cfresellerimport:hover {
+    background: #63a1d7;
+}
+
+#cfzones {
+    width: 100%;
+    font-size: 12px;
+    font-weight: 300;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cfzones th {
+    font-family: inherit;
+    background: #2f7bbf;
+    color: white;
+    height: 30px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#cfzones td {
+    font-family: inherit;
+    height: 30px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 300;
+}
+
+#cfzones tr {
+    font-family: inherit;
+    height: 30px;
+    text-align: left;
+}
+
+#cfzones tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+#cfstatus {
+    font-family: inherit;
+    font-size: 20px;
+    width: 100%;
+}
+
+#cfcreds {
+    font-family: inherit;
+    font-size: 12px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cfcreds button {
+    font-family: "Open Sans", sans-serif;
+    background: #9bca3e;
+    height: 30px;
+    width: auto;
+    display: block;
+    padding: 5px 15px 5px 15px;
+    color: white;
+    margin-left: 125px;
+
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+#cfcreds button:hover {
+    background: #bbd97c;
+}
+
+#cfcreds input {
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 0;
+    height: 25px;
+    padding-left: 10px;
+}
+
+#cfcreds input:focus {
+    box-shadow: 0 0 5px transparent;
+}
+
+#cfcreds label {
+    font-family: "Open Sans", sans-serif;
+    width: 75px;
+    height: 25px;
+    text-align: right;
+    display: inline-block;
+    margin: 0 50px 0 0;
+}
+
+#cfplans {
+    font-family: "Open Sans", sans-serif;
+    border-spacing: 0;
+    border-color: transparent;
+}
+
+#cfplans th {
+    font-family: inherit;
+    background: #2f7bbf;
+    color: white;
+    height: 30px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#cfplans tr {
+    font-family: inherit;
+    height: 30px;
+    text-align: left;
+}
+
+#cfplans td {
+    font-family: inherit;
+    height: 30px;
+    text-align: left;
+    padding: 3px 10px 3px 10px;
+    font-weight: 300;
+}
+
+#cfplans td > a {
+    display: block;
+    height: inherit;
+    width: 100%;
+}
+
+#cfplans td > a > img {
+    display: block;
+    height: inherit;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cfplans tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.cfhidden {
+    display: none;
+}
+
+.cfcontainer .notice {
+    background-color: lightcoral;
+    border: 2px solid red;
+    color: white;
+    padding: 5px 10px;
+    margin: .5em;
+}
+
+.cfcontainer small {
+    font-size: smaller;
+}
+
+#order-modern .cfcontainer #cfnameserver, #order-modern .cfcontainer #cfcname {
+    text-align: left;
+}
+
+/*2f7bbf is the CloudFlare Blue*/
