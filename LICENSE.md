@@ -1,4 +1,5 @@
-Copyright (c) 2016, CloudFlare. All rights reserved.
+Original work, Copyright (c) 2016, CloudFlare. All rights reserved.
+Modified work, Copyright (c) 2019, Kelly Karnetsky. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
